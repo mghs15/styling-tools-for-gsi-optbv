@@ -1,4 +1,4 @@
-# styleing-tools-for-gsi-optbv
+# styling-tools-for-gsi-optbv
 地理院の最適化ベクトルタイルのスタイリング用のツール
 
 [最適化ベクトルタイル](https://github.com/gsi-cyberjapan/optimal_bvmap)のスタイリング用ツールです。
