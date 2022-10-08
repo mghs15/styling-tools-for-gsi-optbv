@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Web地図テンプレ</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://maps.gsi.go.jp/vector/mapbox/1.13.0/mapbox-gl-gsi.js'></script>
+<link href='https://maps.gsi.go.jp/vector/mapbox/1.13.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+body { margin:0; padding:0;}
+
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  width: 100%;
+}
+
+#menutop{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 99999;
+}
+
+#menu {
+  position: relative;
+  padding: 5px 20px ;
+  margin: 0 0;
+  background: #eeeeee;
+  box-shadow: 0px 0px 0px 0px #eeeeee;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 30px;
+  //max-width: 350px;
+}
+button.local {
+  display: block;
+  text-align:center;
+  background: #dddddd;
+  padding 0 0.5em 0 0.5em;
+  border: solid 2px #ddd;
+  border-radius: 3px;
+  margin: 2.5px 0px 2.5px 0px;
+  line-height: 1.5em;
+  font-size: 1em;
+  width: 100%;
+}
+button.small {
+  text-align:center;
+  background: #dddddd;
+  padding 0 0.5em 0 0.5em;
+  border: solid 2px #aaa;
+  border-radius: 3px;
+  margin: 2.5px 0px 2.5px 0px;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+#slider_01 {
+  //width: 80%;
+}
+
+#slider_02 {
+  //width: 80%;
+}
+
+#note {
+  position: relative;
+  color: #FF0000;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  right: 0.5em;
+  text-align: right;
+  text-shadow: #FFFFFF 0.2em 0.2em 0.2em, #FFFFFF -0.2em 0.2em 0.2em, #FFFFFF 0.2em -0.2em 0.2em, #FFFFFF -0.2em -0.2em 0.2em;
+}
+
+
+#overlay-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #EEEEEE;
+  z-index: 1000000;
+  padding: 5px 20px;
+}
+
+table.popup-table {
+  //border-collapse: collapse;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+
+</style>
+<body>
+
+<div id='map'></div>
+
+<script>
+
+/*************************************************/
+/*Mapbox 関係設定                                */
+/*************************************************/
+const map = new mapboxgl.Map({
+  container: 'map', // container id
+  hash: true, //add #position on URL
+  style: './style.json', // stylesheet location
+  center: [139.78148, 35.768793], // starting position [lng, lat]
+  zoom: 9, // starting zoom
+  minZoom: 4,
+  maxZoom: 17.99,
+  attributionControl: false,
+  //clickTolerance: 10,
+  localIdeographFontFamily: ['MS Gothic', 'Hiragino Kaku Gothic Pro', 'sans-serif']
+});
+
+
+map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+map.addControl(new mapboxgl.ScaleControl() );
+map.addControl(new mapboxgl.AttributionControl({compact: true}), 'top-right');
+
+map.showTileBoundaries = false;
+
+
+
+
+const makePopupHtml = (prop) => {
+  
+  let htmlString = ""; //ポップアップ
+  let featureProperties = "";
+  for(name in prop){
+    featureProperties = featureProperties + "<tr><td style='vertical-align:top; color:#555555;'>" + name + "</td>"
+                      + "<td style='color:#000000;'>" + prop[name] + "</td></tr>";
+  }
+  htmlString = htmlString + "<table class='popup-table'>" + featureProperties + "</table>";
+  
+  return htmlString;
+  
+}
+
+const popup = new mapboxgl.Popup();
+map.on('click', function(e) {
+  
+  //初期化
+  popup.remove();
+  
+  //レンダリングされた地物を取得
+  const sv = 3;
+  const bb = [
+    [e.point.x - sv, e.point.y - sv],
+    [e.point.x + sv, e.point.y + sv]
+  ];
+  const features = map.queryRenderedFeatures(bb);
+  
+  if (!features.length) {
+    popup.remove();
+    return;
+  }
+  
+  //ポップアップ表示処理
+  let htmlString = "";
+  features.forEach( feature => {
+    htmlString = htmlString + makePopupHtml(feature.properties);
+    console.log(feature);
+  });
+  
+  if (!htmlString || htmlString == "") {
+    popup.remove();
+    return;
+  }
+  
+  popup.setLngLat([ e.lngLat.lng, e.lngLat.lat ])
+    .setHTML(htmlString)
+    .addTo(map);
+});
+
+</script>
+
+</body>
+</html>
