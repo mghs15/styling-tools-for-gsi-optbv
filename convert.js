@@ -447,7 +447,7 @@ const colorSets = {
   
 }
 
-const mode = "dark2";
+const mode = process.argv[2] || "basic";
 colorSet = colorSets[mode] || colorSets["basic"];
 
 const changeColor = (arr, info={}) => {
@@ -460,13 +460,13 @@ const changeColor = (arr, info={}) => {
   let a = hsla[3]
   
   
-  if(mode == "m"){
+  if(mode == "mono"){
   //モノクロ
     if( s > 0 ) s = 1;
     if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
     return(["hsla", h, s + "%", l + "%", a]);
   
-  }else if(mode == "m2"){
+  }else if(mode == "mono2"){
   //モノクロ風（少し色付き）
     h = 200;
     if( s > 0 ) s = 10;
@@ -474,7 +474,7 @@ const changeColor = (arr, info={}) => {
     if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
     return(["hsla", h, s + "%", l + "%", a]);
   
-  }else if(mode == "m3"){
+  }else if(mode == "mono3"){
   //モノクロ（水域の色調整）
     if( s > 0 ) s = 1;
     if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
@@ -524,5 +524,5 @@ console.log(tmp);
 
 
 const resstring = JSON.stringify(style);
-fs.writeFileSync("./docs/style.json", resstring);
+fs.writeFileSync(`./docs/${mode}.json`, resstring);
 
