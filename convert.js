@@ -534,6 +534,8 @@ console.log(tmp);
 
 console.log(`layer count: ${style.layers.length}`);
 
+const prefix = process.argv[3] || "";
+
 const resstring = JSON.stringify(style);
-fs.writeFileSync(`./docs/${mode}.json`, resstring);
+fs.writeFileSync(`./docs/${prefix}${mode}.json`, resstring);
 
