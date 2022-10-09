@@ -1,0 +1,86 @@
+[
+  {
+      "id": "鉄道駅",
+      "maxzoom": 17,
+      "type": "line",
+      "source": "v",
+      "source-layer": "RailCL",
+      "filter": [
+        "==", [ "get", "vt_sngldbl" ], "駅部分"
+      ],
+      "paint": {
+          "line-color": [
+              "match",
+              [ "get", "vt_rtcode" ],
+              "地下鉄", "-railway-subway-main-#1",
+              "-railway-normal-main-#1"
+          ],
+          "line-opacity": 1,
+          "line-width": [
+             "interpolate",
+             [ "linear" ],
+             [ "zoom" ],
+             11, 3,
+             15, 5
+          ]
+      },
+      "layout": {
+          "line-cap": "round"
+      },
+      "metadata": {
+        "additional": true
+      }
+  },
+  
+  {
+    "id": "建築物3D",
+    "type": "fill-extrusion",
+    "source": "v",
+    "source-layer": "BldA",
+    "paint": {
+        "fill-extrusion-color": [
+            "match",
+            [ "get", "vt_code" ],
+            3101, "-building-normal-main-#1",
+            3102, "-building-middle-main-#1",
+            3103, "-building-high-main-#1",
+            3111, "-building-normal-main-#0.8",
+            3112, "-building-middle-main-#0.8",
+            "rgba(0,0,0,0)"
+        ],
+        "fill-extrusion-height": [
+            "match",
+            [ "get", "vt_code" ],
+            3103, 100, 3113, 100, 3102, 40, 3112, 40, 10
+        ],
+        "fill-extrusion-opacity": 0.8
+    },
+    "metadata": {
+      "additional": true
+    }
+  },
+  {
+    "id": "構造物面3D",
+    "type": "fill-extrusion",
+    "source": "v",
+    "source-layer": "StrctArea",
+    "paint": {
+        "fill-extrusion-color": [
+            "match",
+            [ "get", "vt_code" ],
+            4301, "-building-high-main-#1",
+            4302, "-building-normal-main-#1",
+            "rgba(0,0,0,0)"
+        ],
+        "fill-extrusion-height": [
+            "match",
+            [ "get", "vt_code" ],
+            4301, 40, 10
+        ],
+        "fill-extrusion-opacity": 0.8
+    },
+    "metadata": {
+      "additional": true
+    }
+  }
+]

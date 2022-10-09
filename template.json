@@ -1376,26 +1376,59 @@
                     1
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -2387,30 +2420,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -2474,26 +2541,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -2563,31 +2663,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -3467,31 +3599,65 @@
                     16,
                     1
                 ],
-                "line-width": [
-                    "case",
+                "line-width": 1,
+                "line-gap-width": [
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        6,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        5,
+                        4
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        7,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        6,
+                        5
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "butt"
             }
         },
         {
@@ -3523,30 +3689,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -3586,26 +3786,59 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -3662,26 +3895,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -3740,31 +4006,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -4596,30 +4894,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -4683,26 +5015,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -4772,31 +5137,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -5590,31 +5987,65 @@
                     16,
                     1
                 ],
-                "line-width": [
-                    "case",
+                "line-width": 1,
+                "line-gap-width": [
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        6,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        5,
+                        4
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        7,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        6,
+                        5
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "butt"
             }
         },
         {
@@ -5646,30 +6077,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -5709,26 +6174,59 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -5785,26 +6283,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -5863,31 +6394,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -6805,30 +7368,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -6892,26 +7489,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -6981,31 +7611,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -7799,31 +8461,65 @@
                     16,
                     1
                 ],
-                "line-width": [
-                    "case",
+                "line-width": 1,
+                "line-gap-width": [
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        6,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        5,
+                        4
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        7,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        6,
+                        5
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "butt"
             }
         },
         {
@@ -7855,30 +8551,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -7918,26 +8648,59 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -7994,26 +8757,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -8072,31 +8868,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -9014,30 +9842,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -9101,26 +9963,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -9190,31 +10085,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -10008,31 +10935,65 @@
                     16,
                     1
                 ],
-                "line-width": [
-                    "case",
+                "line-width": 1,
+                "line-gap-width": [
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        6,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        5,
+                        4
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        7,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        6,
+                        5
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "butt"
             }
         },
         {
@@ -10064,30 +11025,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -10127,26 +11122,59 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -10203,26 +11231,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -10281,31 +11342,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -11223,30 +12316,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -11310,26 +12437,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -11399,31 +12559,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -12217,31 +13409,65 @@
                     16,
                     1
                 ],
-                "line-width": [
-                    "case",
+                "line-width": 1,
+                "line-gap-width": [
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        6,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        5,
+                        4
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        7,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        6,
+                        5
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "butt"
             }
         },
         {
@@ -12273,30 +13499,64 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round"
+                "line-cap": "round",
+                "visibility": "none"
             }
         },
         {
@@ -12336,26 +13596,59 @@
             "paint": {
                 "line-color": "-railway-normal-main-#1",
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -12412,26 +13705,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -12490,31 +13816,63 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "round"
             }
         },
         {
@@ -13030,26 +14388,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {
@@ -13201,26 +14592,59 @@
                     ]
                 ],
                 "line-width": [
-                    "case",
+                    "interpolate",
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "駅部分"
+                        "linear"
                     ],
-                    3,
                     [
-                        "==",
-                        [
-                            "get",
-                            "vt_sngldbl"
-                        ],
-                        "複線以上"
+                        "zoom"
                     ],
-                    2,
-                    1
+                    11,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        3,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        2,
+                        1
+                    ],
+                    15,
+                    [
+                        "case",
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "駅部分"
+                        ],
+                        4,
+                        [
+                            "==",
+                            [
+                                "get",
+                                "vt_sngldbl"
+                            ],
+                            "複線以上"
+                        ],
+                        3,
+                        2
+                    ]
                 ]
             },
             "layout": {

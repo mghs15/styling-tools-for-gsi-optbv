@@ -502,6 +502,8 @@ const changeColor = (arr, info={}) => {
 /*メイン                                         */
 /*************************************************/
 
+const stockLayers = [];
+
 //テキスト形式を配列へ
 layers.forEach( layer => {
   if(layer.visibility && layer.visibility == "none") return;
@@ -515,13 +517,22 @@ layers.forEach( layer => {
       }
     }
   }
+  
+  if(layer.layout && layer.layout.visibility == "none"){
+    
+  }else{
+    stockLayers.push(layer);
+  }
+  
 });
 
+style.layers = stockLayers;
 
 console.log(tmp);
 //console.log(tmp2);
 //console.log(layers);
 
+console.log(`layer count: ${style.layers.length}`);
 
 const resstring = JSON.stringify(style);
 fs.writeFileSync(`./docs/${mode}.json`, resstring);

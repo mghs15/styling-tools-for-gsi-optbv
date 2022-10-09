@@ -150,7 +150,7 @@ const convertColor = (colorInfo, arr=[], info={}) => {
       tmp4[colorInfo] = 1;
     }
     
-    console.log(colorInfo2);
+    //console.log(colorInfo2);
     
     const identifier = (info.metadata) ? info.metadata.path || info.id : info.id;
     if( colorInfo2.match(/^rgb/) || colorInfo2.match(/^hsl/) ){
@@ -306,25 +306,30 @@ const railLayerConvert = (layer) => {
     return layer;
   }
   
+  
   if(layer.type == "line"){
     if(!layer.layout) layer.layout = {};
+    //駅レイヤを別途追加する場合は不要
     layer.layout["line-cap"] = "round";
   }
   
+  
   if(layer.id.match("鉄道中心線旗竿")){
-    layer.layout.visibility = "none";
-    /*
+    //layer.layout.visibility = "none";
     //旗竿は、filter でJR線のみが対象となる
-    layer.minzoom = 11;
-    layer.paint["line-width"] = ["case",
-      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], 2,
-      1
-    ];
-    */
+    //layer.minzoom = 11;
+  }
+  
+  if(layer.id.match("鉄道中心線駅ククリ")){
+    layer.layout.visibility = "none";
+  }
+  
+  if(layer.id.match(/鉄道.*ククリ/)){
+    //layer.layout.visibility = "none";
   }
   
   if(layer.id.match("鉄道中心線地下トンネル")){
-    //layer.paint["line-dasharray"] = [4, 4];
+    //layer.paint["line-dasharray"] = [2, 2];
     layer.paint["line-opacity"] = [ "case", 
       [ "==", [ "get", "vt_sngldbl" ], "駅部分" ], 1, 
       [ "case", 
@@ -334,26 +339,86 @@ const railLayerConvert = (layer) => {
     ];
   }
   
-  layer.paint["line-width"] = ["case",
-    [ "==", [ "get", "vt_sngldbl" ], "駅部分"], 3,
-    [ "==", [ "get", "vt_sngldbl" ], "複線以上"], 2,
-    1
-  ];
-  /*
-  layer.paint["line-gap-width"] = ["case",
-    [ "==", [ "get", "vt_sngldbl" ], "複線以上"], 1,
-    0
-  ];
-  */
+  let wSta = 3;
+  let wDbl = 2;
+  let wSgl = 1;
   
-  /*
+  if(layer.id.match(/鉄道.*ククリ白/)){
+    layer.layout.visibility = "none";
+  }
+  
+  if(layer.id.match(/鉄道.*ククリ黒/)){
+    wSta += 1; wDbl += 1; wSgl += 1; 
+    layer.paint["line-width"] = 1;
+    layer.paint["line-gap-width"] = [
+      "interpolate",
+      [ "linear" ],
+      [ "zoom" ],
+      11,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 2,
+        [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 2,
+        wSgl + 2
+      ],
+      15,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 1 + 2,
+        [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 1 + 2,
+        wSgl + 1 + 2
+      ]
+    ];
+    layer.layout["line-cap"] = "butt";
+    
+    return layer;
+  }
+  
+  /************************************
+  if(layer.id.match("鉄道中心線地下トンネル")){
+    layer.paint["line-dasharray"] = [2, 2];
+    layer.paint["line-width"] = 1;
+    layer.paint["line-opacity"] = 1;
+    layer.paint["line-gap-width"] = [
+      "interpolate",
+      [ "linear" ],
+      [ "zoom" ],
+      11,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta,
+        0
+      ],
+      15,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 1,
+        0
+      ]
+    ];
+    
+    return layer;
+  }
+  ************************************/
+  
+  layer.paint["line-width"] = [
+    "interpolate",
+    [ "linear" ],
+    [ "zoom" ],
+    11,["case",
+      [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta,
+      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl,
+      wSgl
+    ],
+    15,["case",
+      [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 1,
+      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 1,
+      wSgl + 1
+    ]
+  ];
+  
+  /********************************
   layer.paint["line-width"] = ["case",
     [ "==", [ "get", "vt_sngldbl" ], "駅部分"], 4,
     [ "==", [ "get", "vt_sngldbl" ], "複線以上"], ["case",  ["==", [ "get", "vt_rtcode" ], "JR"], 3, 2],
     ["==", [ "get", "vt_rtcode" ], "JR" ], 2,
     1
   ];
-  */
+  ********************************/
+  
+  return layer;
   
 }
 
@@ -370,7 +435,7 @@ const buildingLayerConvert = (layer) => {
     return layer;
   }
   
-  /*
+  
   //レイヤ順そのままでfill-extrusionとすると、ラインデータとの表示の重なりがおかしくなる。
   layer.type = "fill-extrusion";
   if(!layer.paint) layer.paint = {};
@@ -392,7 +457,51 @@ const buildingLayerConvert = (layer) => {
   for(name in layer.layout){
     if(!name.match(/extrusion/) && name != "visivility") delete layer.layout[name];
   }
-  */
+  
+  return layer;
+  
+}
+
+const stock = {
+  "isFinishedFlag": false
+};
+
+const additionalChange = (layer) => {
+  
+  
+  if(!layer["source-layer"] || (
+     layer["source-layer"] != "RailCL" && 
+     layer["source-layer"] != "BldA" && 
+     layer["source-layer"] != "StrctArea" && 
+     layer.id != "送電線破線" //このレイヤ直後に追加レイヤを加える
+  )){
+    return layer;
+  }
+  
+  if(layer["source-layer"] == "BldA"){
+    if(!layer.layout) layer.layout = {};
+    layer.layout.visibility = "none";
+    return layer;
+  }
+  
+  if(layer["source-layer"] == "RailCL" && layer.type == "line"){
+    if(!layer.layout) layer.layout = {};
+    layer.layout["line-cap"] = "butt";
+  }
+  if(layer.id.match("鉄道中心線地下トンネル")){
+    layer.paint["line-dasharray"] = [2, 2];
+  }
+  
+  
+  //スタイルレイヤの追加
+  if(!stock.isFinishedFlag && layer.id == "送電線破線"){
+    console.log(`added addtional layers`);
+    stock.isFinishedFlag = true;
+    const additionalLayers = require("./additionalLayers.json");
+    additionalLayers.forEach( additionalLayer => {
+      stockLayers.push(additionalLayer);
+    });
+  }
   
   return layer;
   
@@ -402,6 +511,8 @@ const buildingLayerConvert = (layer) => {
 /*************************************************/
 /*メイン                                         */
 /*************************************************/
+
+const stockLayers = [];
 
 //テキスト形式を配列へ
 layers.forEach( layer => {
@@ -417,13 +528,27 @@ layers.forEach( layer => {
     }
   }
   
+  //追加レイヤには適用しない
+  if(layer.metadata && layer.metadata.additional){
+    return;
+  }
+  
+  //色以外の調整
   layer = boundaryLayerConvert(layer);
   layer = roadLayerConvert(layer);
-  //layer = buildingLayerConvert(layer);
   layer = railLayerConvert(layer);
+  
+  //追加レイヤ対応
+  if(process.argv[2]){
+    layer = additionalChange(layer);
+  }
+  
+  stockLayers.push(layer);
   
 });
 
+
+style.layers = stockLayers;
 
 //console.log(tmp); //色ごとのレイヤ数（重複あり）
 //console.log(tmp2); //色ごとのレイヤリスト（重複あり）
@@ -434,6 +559,7 @@ layers.forEach( layer => {
 
 console.log(tmp3);
 
+console.log(`layer count: ${style.layers.length}`);
 
 const resstring = JSON.stringify(style, null, 4);
 fs.writeFileSync("template.json", resstring);
