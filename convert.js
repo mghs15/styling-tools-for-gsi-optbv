@@ -244,8 +244,8 @@ const colorSets = {
     '-railway-normal-main-': [ 100, 100, 100 ],
     '-railway-shinkansen-main-': [ 0, 0, 255 ],
     '-railway-all-back-': [ 255, 255, 240 ],
-    //'-railway-normal-blank-': [255, 255, 255], デフォルト色でよい
     '-railway-subway-main-': [ 0, 0, 255 ],
+    '-railway-normal-blank-': [ 255, 255, 255 ],
     
     '-road-major-main-': [ 240, 200, 120 ],
     '-road-normal-main-': [ 240, 240, 240 ],
@@ -288,6 +288,7 @@ const colorSets = {
     '-railway-shinkansen-main-': [ 255, 255, 255 ],
     '-railway-all-back-': [ 30, 30, 30 ],
     '-railway-subway-main-': [ 180, 180, 180 ],
+    '-railway-normal-blank-': [ 50, 50, 50 ],
     
     '-road-major-main-': [ 60, 60, 60 ],
     '-road-normal-main-': [ 40, 40, 40 ],
@@ -330,6 +331,7 @@ const colorSets = {
     '-railway-shinkansen-main-': [ 255, 255, 255 ],
     '-railway-all-back-': [ 30, 30, 30 ],
     '-railway-subway-main-': [ 161, 218, 230 ],
+    '-railway-normal-blank-': [ 50, 50, 50 ],
     
     '-road-major-main-': [ 60, 60, 60 ],
     '-road-normal-main-': [ 40, 40, 40 ],
@@ -372,6 +374,7 @@ const colorSets = {
     '-railway-shinkansen-main-': [ 255, 255, 255 ],
     '-railway-all-back-': [ 0, 160, 255 ],
     '-railway-subway-main-': [ 255, 255, 255 ],
+    '-railway-normal-blank-': [ 51, 180, 255 ],
     
     '-road-major-main-': [ 0, 160, 255 ],
     '-road-normal-main-': [ 0, 160, 255 ],
@@ -381,9 +384,10 @@ const colorSets = {
     '-road-all-back-': [ 255, 255, 255 ],
     '-road-edge-': [ 255, 255, 255 ],
     
-    '-building-normal-main-': [ 255, 255, 255 ],
-    '-building-middle-main-': [ 255, 255, 255 ],
-    '-building-high-main-': [ 255, 255, 255 ],
+    '-building-normal-main-': [ 51, 180, 255 ],
+    '-building-middle-main-': [ 51, 180, 255 ],
+    '-building-high-main-': [ 51, 180, 255 ],
+    '-building-normal-outline-': [ 255, 255, 255 ],
     
     '-wetland-main-main-': [ 255, 255, 255 ],
     '-landform-main-main-': [ 255, 255, 255 ],
@@ -413,6 +417,7 @@ const colorSets = {
     '-railway-shinkansen-main-': [ 0, 255, 100 ],
     '-railway-all-back-': [ 0, 0, 0 ],
     '-railway-subway-main-': [ 0, 255, 100 ],
+    '-railway-normal-blank-': [ 0, 25, 10 ],
     
     '-road-major-main-': [ 0, 0, 0 ],
     '-road-normal-main-': [ 0, 0, 0 ],

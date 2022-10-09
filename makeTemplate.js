@@ -313,21 +313,6 @@ const railLayerConvert = (layer) => {
     layer.layout["line-cap"] = "round";
   }
   
-  
-  if(layer.id.match("鉄道中心線旗竿")){
-    //layer.layout.visibility = "none";
-    //旗竿は、filter でJR線のみが対象となる
-    //layer.minzoom = 11;
-  }
-  
-  if(layer.id.match("鉄道中心線駅ククリ")){
-    layer.layout.visibility = "none";
-  }
-  
-  if(layer.id.match(/鉄道.*ククリ/)){
-    //layer.layout.visibility = "none";
-  }
-  
   if(layer.id.match("鉄道中心線地下トンネル")){
     //layer.paint["line-dasharray"] = [2, 2];
     layer.paint["line-opacity"] = [ "case", 
@@ -343,8 +328,22 @@ const railLayerConvert = (layer) => {
   let wDbl = 2;
   let wSgl = 1;
   
+  if(layer.id.match("鉄道中心線駅ククリ")){
+    layer.layout.visibility = "none";
+  }
+  
+  if(layer.id.match(/鉄道.*ククリ/)){
+    //layer.layout.visibility = "none";
+  }
+  
   if(layer.id.match(/鉄道.*ククリ白/)){
     layer.layout.visibility = "none";
+  }
+  
+  if(layer.id.match("鉄道中心線旗竿")){
+    //layer.layout.visibility = "none";
+    //旗竿は、filter でJR線のみが対象となる
+    //layer.minzoom = 11;
   }
   
   if(layer.id.match(/鉄道.*ククリ黒/)){
