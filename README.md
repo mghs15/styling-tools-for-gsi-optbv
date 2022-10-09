@@ -5,6 +5,9 @@
 上記レポジトリで公開されている std.json をもとに、オリジナルカラーのスタイルを生成します。
 
 ![サンプル](./sample.png)
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=basic
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
 
 以下のレポジトリでの成果をベースにしています。
 
