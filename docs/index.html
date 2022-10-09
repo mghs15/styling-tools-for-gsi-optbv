@@ -103,13 +103,29 @@ table.popup-table {
 
 <script>
 
+const getQueryParams = () => {
+  const q = window.location.search;
+  const qq = q.slice(1);
+  const qset = qq.split("&");
+  const qobj = {};
+  qset.forEach( c => {
+    const cc = c.split("=");
+    qobj[cc[0]] = cc[1];
+  });
+  return qobj;
+}
+
+const queries = getQueryParams();
+
+const styleName = queries.style || "basic";
+
 /*************************************************/
 /*Mapbox 関係設定                                */
 /*************************************************/
 const map = new mapboxgl.Map({
   container: 'map', // container id
   hash: true, //add #position on URL
-  style: './style.json', // stylesheet location
+  style: `./${styleName}.json`, // stylesheet location
   center: [139.78148, 35.768793], // starting position [lng, lat]
   zoom: 9, // starting zoom
   minZoom: 4,
