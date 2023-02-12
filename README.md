@@ -9,7 +9,7 @@
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
 
-以下のレポジトリでの成果をベースにしています。
+以下のレポジトリでの成果をベースにしています（参考文献等もご参照ください）。
 
 * https://github.com/mghs15/simple-style-tools
 * https://github.com/mghs15/style-color-change-on-web
