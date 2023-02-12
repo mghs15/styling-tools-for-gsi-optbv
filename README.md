@@ -11,7 +11,8 @@
 
 以下のレポジトリでの成果をベースにしています。
 
-https://github.com/mghs15/simple-style-tools
+* https://github.com/mghs15/simple-style-tools
+* https://github.com/mghs15/style-color-change-on-web
 
 ## 使い方
 1. `makeTemplate.js`でもとになる`std.json`からひな型となる`template.json`を作成する。
