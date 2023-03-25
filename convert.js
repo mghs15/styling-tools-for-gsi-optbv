@@ -246,14 +246,15 @@ const colorSets = {
     '-railway-all-back-': [ 255, 255, 240 ],
     '-railway-subway-main-': [ 0, 0, 255 ],
     '-railway-normal-blank-': [ 255, 255, 255 ],
+    '-railway-station-main-': [ 255, 120, 120 ],
     
     '-road-major-main-': [ 240, 200, 120 ],
-    '-road-normal-main-': [ 240, 240, 240 ],
+    '-road-normal-main-': [ 230, 230, 230 ],
     '-road-highway-main-': [ 255, 190, 190 ],
     '-road-prefectural-main-': [ 255, 210, 110 ],
     '-road-expressway-main-': [ 0, 150, 0 ],
     '-road-all-back-': [ 220, 220, 220 ],
-    '-road-edge-': [ 230, 230, 230],
+    '-road-edge-': [ 255, 255, 255 ],
     
     '-building-normal-main-': [ 230, 230, 230 ],
     '-building-middle-main-': [ 220, 220, 220 ],
@@ -289,6 +290,7 @@ const colorSets = {
     '-railway-all-back-': [ 30, 30, 30 ],
     '-railway-subway-main-': [ 180, 180, 180 ],
     '-railway-normal-blank-': [ 50, 50, 50 ],
+    '-railway-station-main-': [ 180, 180, 180 ],
     
     '-road-major-main-': [ 60, 60, 60 ],
     '-road-normal-main-': [ 40, 40, 40 ],
@@ -332,6 +334,7 @@ const colorSets = {
     '-railway-all-back-': [ 30, 30, 30 ],
     '-railway-subway-main-': [ 161, 218, 230 ],
     '-railway-normal-blank-': [ 50, 50, 50 ],
+    '-railway-station-main-': [ 79, 226, 255 ],
     
     '-road-major-main-': [ 60, 60, 60 ],
     '-road-normal-main-': [ 40, 40, 40 ],
@@ -375,6 +378,7 @@ const colorSets = {
     '-railway-all-back-': [ 0, 160, 255 ],
     '-railway-subway-main-': [ 255, 255, 255 ],
     '-railway-normal-blank-': [ 51, 180, 255 ],
+    '-railway-station-main-': [ 255, 255, 255 ],
     
     '-road-major-main-': [ 0, 160, 255 ],
     '-road-normal-main-': [ 0, 160, 255 ],
@@ -418,6 +422,7 @@ const colorSets = {
     '-railway-all-back-': [ 0, 0, 0 ],
     '-railway-subway-main-': [ 0, 255, 100 ],
     '-railway-normal-blank-': [ 0, 25, 10 ],
+    '-railway-station-main-': [ 0, 255, 100 ],
     
     '-road-major-main-': [ 0, 0, 0 ],
     '-road-normal-main-': [ 0, 0, 0 ],

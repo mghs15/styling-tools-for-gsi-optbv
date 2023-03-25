@@ -124,7 +124,8 @@ const convertColor = (colorInfo, arr=[], info={}) => {
         colorInfo2 = "-railway-normal-blank-" + "#" + opacity;
       }else if(colorInfo.match(/\(255,255,255/)){
         //基本的に「駅部分」の白を想定
-        colorInfo2 = "-railway-normal-main-" + "#" + opacity;
+        //colorInfo2 = "-railway-normal-main-" + "#" + opacity;
+        colorInfo2 = "-railway-station-main-" + "#" + opacity;
       }else if(colorInfo.match(/\(173,173,173/)){
         colorInfo2 = "-railway-normal-main-" + "#" + opacity;
       }else if(colorInfo.match(/\(100,100,100/)){

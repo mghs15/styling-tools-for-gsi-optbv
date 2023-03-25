@@ -2528,7 +2528,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -3693,7 +3693,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-normal-main-#1",
+                "line-color": "-railway-station-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -3888,7 +3888,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -5008,7 +5008,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -6081,7 +6081,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-normal-main-#1",
+                "line-color": "-railway-station-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -6276,7 +6276,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -7488,7 +7488,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -8561,7 +8561,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-normal-main-#1",
+                "line-color": "-railway-station-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -8756,7 +8756,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -9968,7 +9968,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -11041,7 +11041,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-normal-main-#1",
+                "line-color": "-railway-station-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -11236,7 +11236,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -12448,7 +12448,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -13521,7 +13521,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-normal-main-#1",
+                "line-color": "-railway-station-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -13716,7 +13716,7 @@
                         ],
                         "駅部分"
                     ],
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     [
                         "match",
                         [
@@ -14380,7 +14380,7 @@
                         "vt_rtcode"
                     ],
                     "地下鉄",
-                    "-railway-normal-main-#1",
+                    "-railway-station-main-#1",
                     "-railway-normal-main-#1"
                 ],
                 "line-opacity": [
@@ -15059,7 +15059,7 @@
                     ],
                     "地下鉄",
                     "-railway-subway-main-#1",
-                    "-railway-normal-main-#1"
+                    "-railway-station-main-#1"
                 ],
                 "line-opacity": 1,
                 "line-width": [

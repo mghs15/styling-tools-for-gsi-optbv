@@ -13,7 +13,7 @@
               "match",
               [ "get", "vt_rtcode" ],
               "地下鉄", "-railway-subway-main-#1",
-              "-railway-normal-main-#1"
+              "-railway-station-main-#1"
           ],
           "line-opacity": 1,
           "line-width": [
