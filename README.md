@@ -11,7 +11,7 @@
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
 ## 3D 風
-元のスタイルを多少加工。個人的な感覚では見やすくしています。
+元のスタイルの構造を多少加工。個人的な感覚では見やすくしています。
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-basic
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono2
@@ -22,12 +22,14 @@
 * https://github.com/mghs15/style-color-change-on-web
 
 ## 使い方
-1. `makeTemplate.js`でもとになる`std.json`からひな型となる`template.json`を作成する。
+### 1. `makeTemplate.js`
+もとになる `std.json` からひな型となる `template.json` を作成する。
   * 地図デザインで使われている色を、地物のカテゴリごとに分類する。
-  * 分類した色を文字列として`template.json`に埋め込む（`template.json`そのものをMapbox GL JSで利用できない。）。
+  * 分類した色を文字列として `template.json` に埋め込む（`template.json` そのものは Mapbox GL JS で利用できない。）。
   * 一部色以外にも、線の太さ等を変更している。
-  * 引数に何らかの文字を渡すと、駅用のレイヤと`fill-extrusion`による建物3Dレイヤを追加する（関連する調整あり）。
-2. `convert.js`で`template.json`の文字列を使いたい配色セットで置き換える。
+  * 引数に何らかの文字を渡すと、駅用のレイヤと `fill-extrusion` による建物 3D レイヤを追加する（関連する調整あり）。
+### 2. `convert.js`
+作成した `template.json` の文字列を使いたい配色セットで置き換える。
   * 配色セットは、今のところ、`convert.js` にハードコードされている。
   * 配色セットの中から、どの配色にするかについては、１つ目の引数に渡す。
   * 主な関数は２つ
@@ -39,8 +41,9 @@
       * モノクロ系統については、色の変換を行う。
       * `["rgba", r, g, b, a]`、`["hsla", h, "s%", "l%", a]` の配列を返す。
       * 内部的に rgb と hsl の変換が入る。
-3. `setup.js`は、スタイル一式を`docs`フォルダへ出力する。
-  * どのスタイルを出力するかは、変数`list`にハードコード。
+### 3. `setup.js`
+スタイル一式を `docs` フォルダへ出力する。
+  * どのスタイルを出力するかは、変数 `list` にハードコード。
 
 ## 変更履歴
 ### 2023/03/25
