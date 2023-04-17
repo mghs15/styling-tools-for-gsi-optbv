@@ -5,9 +5,16 @@
 上記レポジトリで公開されている std.json をもとに、オリジナルカラーのスタイルを生成します。
 
 ![サンプル](./sample.png)
+## 2D
+極力元のスタイルの構造を活かしています。
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=basic
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
+## 3D 風
+元のスタイルを多少加工。個人的な感覚では見やすくしています。
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-basic
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark2
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono2
 
 以下のレポジトリでの成果をベースにしています（参考文献等もご参照ください）。
 
