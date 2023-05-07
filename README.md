@@ -4,6 +4,8 @@
 [最適化ベクトルタイル](https://github.com/gsi-cyberjapan/optimal_bvmap)のスタイリング用ツールです。
 上記レポジトリで公開されている std.json をもとに、オリジナルカラーのスタイルを生成します。
 
+解説記事（Qiita）→ https://qiita.com/mg_kudo/items/2560f663d657c3ce1125
+
 ![サンプル](./sample.png)
 ## 2D
 極力元のスタイルの構造を活かしています。
