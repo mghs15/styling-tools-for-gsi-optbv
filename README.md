@@ -12,11 +12,13 @@
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=basic
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=railway
 ## 3D 風
 元のスタイルの構造を多少加工。個人的な感覚では見やすくしています。
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-basic
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono2
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-railway
 
 ## 派生元レポジトリ
 以下のレポジトリでの成果をベースにしています。参考文献等もご参照ください。
