@@ -15037,6 +15037,21 @@
             }
         },
         {
+            "id": "送電線破線",
+            "type": "line",
+            "source": "v",
+            "source-layer": "PwrTrnsmL",
+            "paint": {
+                "line-color": "-line-gray-#1",
+                "line-dasharray": [
+                    0.5,
+                    15
+                ],
+                "line-gap-width": 2,
+                "line-width": 2
+            }
+        },
+        {
             "id": "鉄道駅",
             "maxzoom": 17,
             "type": "line",
@@ -15161,21 +15176,6 @@
             },
             "metadata": {
                 "additional": true
-            }
-        },
-        {
-            "id": "送電線破線",
-            "type": "line",
-            "source": "v",
-            "source-layer": "PwrTrnsmL",
-            "paint": {
-                "line-color": "-line-gray-#1",
-                "line-dasharray": [
-                    0.5,
-                    15
-                ],
-                "line-gap-width": 2,
-                "line-width": 2
             }
         },
         {

@@ -462,18 +462,13 @@ const buildingLayerConvert = (layer) => {
   
 }
 
-const stock = {
-  "isFinishedFlag": false
-};
 
 const additionalChange = (layer) => {
-  
   
   if(!layer["source-layer"] || (
      layer["source-layer"] != "RailCL" && 
      layer["source-layer"] != "BldA" && 
-     layer["source-layer"] != "StrctArea" && 
-     layer.id != "送電線破線" //このレイヤ直後に追加レイヤを加える
+     layer["source-layer"] != "StrctArea"
   )){
     return layer;
   }
@@ -492,17 +487,6 @@ const additionalChange = (layer) => {
     layer.paint["line-dasharray"] = [2, 2];
   }
   
-  
-  //スタイルレイヤの追加
-  if(!stock.isFinishedFlag && layer.id == "送電線破線"){
-    console.log(`added addtional layers`);
-    stock.isFinishedFlag = true;
-    const additionalLayers = require("./additionalLayers.json");
-    additionalLayers.forEach( additionalLayer => {
-      stockLayers.push(additionalLayer);
-    });
-  }
-  
   return layer;
   
 }
@@ -513,6 +497,10 @@ const additionalChange = (layer) => {
 /*************************************************/
 
 const stockLayers = [];
+
+const stock = {
+  "isFinishedFlag": false
+};
 
 //テキスト形式を配列へ
 layers.forEach( layer => {
@@ -538,15 +526,28 @@ layers.forEach( layer => {
   layer = roadLayerConvert(layer);
   layer = railLayerConvert(layer);
   
-  //追加レイヤ対応
+  //追加レイヤ対応(1)
+  //既存スタイルの調整
   if(process.argv[2]){
     layer = additionalChange(layer);
   }
   
   stockLayers.push(layer);
   
+  //追加レイヤ対応(2)
+  //スタイルレイヤの追加
+  if(process.argv[2]){
+    if(!stock.isFinishedFlag && layer.id == "送電線破線"){
+      console.log(`added addtional layers`);
+      stock.isFinishedFlag = true;
+      const additionalLayers = require("./additionalLayers.json");
+      additionalLayers.forEach( additionalLayer => {
+        stockLayers.push(additionalLayer);
+      });
+    }
+  }
+  
 });
-
 
 style.layers = stockLayers;
 

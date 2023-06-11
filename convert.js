@@ -495,6 +495,24 @@ const changeColor = (arr, info={}) => {
     
     return(["hsla", h, s + "%", l + "%", a]);
   
+  }else if(mode == "railway"){
+  //モノクロ（鉄道の色調整）
+    h = 200;
+    if( s > 0 ) s = 10;
+    if( s > 0 && info["prop-name"].match("text-color") ) s = 30;
+    if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
+    if( l < 100 && l > 0 && !info["prop-name"].match("text-color")) l = l + (100 - l) * 0.5;
+    
+    if(info && info.colorInfo && info.colorInfo.match(/-railway-(.+)-main-/)){
+       h = 230; s = 50; l = 25;
+    }
+    
+    if(info && info.colorInfo && info.colorInfo.match(/-water-main-(vivid|main)-/)){
+       h = 210; s = 100; l = 85;
+    }
+    
+    return(["hsla", h, s + "%", l + "%", a]);
+  
   }else{
     
     const divNum = 1;
@@ -537,6 +555,37 @@ layers.forEach( layer => {
 });
 
 style.layers = stockLayers;
+
+
+//鉄道強調用
+const railwayLayers = [];
+const railwayStyleStockLayers = [];
+
+if(mode == "railway"){
+  stockLayers.forEach( layer => {
+    if(layer["source-layer"] == "RailCL"){
+      const railLayer = JSON.parse(JSON.stringify(layer));
+      railwayLayers.push(railLayer);
+      if(!layer.layout) layer.layout = {};
+      layer.layout.visibility = "none"; //いったん非表示→後工程（convert.js）で削除
+    }else if(layer.type == "fill-extrusion" || layer.id == "注記シンボル付き重なり"){
+      if(railwayLayers){
+        railwayLayers.forEach( railLayer => {
+          railwayStyleStockLayers.push(railLayer);
+        });
+        console.log(railwayLayers);
+        railwayLayers.length = 0;
+        console.log(railwayLayers);
+        console.log(layer.id);
+      }
+      railwayStyleStockLayers.push(layer);
+    }else{
+      railwayStyleStockLayers.push(layer);
+    }
+  });
+  
+  style.layers = railwayStyleStockLayers;
+}
 
 console.log(tmp);
 //console.log(tmp2);

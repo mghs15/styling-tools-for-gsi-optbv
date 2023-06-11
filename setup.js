@@ -1,6 +1,6 @@
 const child_process = require('child_process');
 
-const list = ["basic", "dark", "dark2", "mono", "mono2", "blueprint", "radar"];
+const list = ["basic", "dark", "dark2", "mono", "mono2", "blueprint", "radar", "railway"];
 
 const prefix = process.argv[2] || "";
 
