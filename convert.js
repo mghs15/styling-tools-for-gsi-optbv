@@ -511,6 +511,10 @@ const changeColor = (arr, info={}) => {
        h = 210; s = 100; l = 85;
     }
     
+    if(info && info.colorInfo && info.colorInfo.match(/-border-muni-main-/)){
+       h = 230; s = 0; l = 25;
+    }
+    
     return(["hsla", h, s + "%", l + "%", a]);
   
   }else{
@@ -559,6 +563,7 @@ style.layers = stockLayers;
 
 //鉄道強調用
 const railwayLayers = [];
+const boundaryLayers = [];
 const railwayStyleStockLayers = [];
 
 if(mode == "railway"){
@@ -567,18 +572,32 @@ if(mode == "railway"){
       const railLayer = JSON.parse(JSON.stringify(layer));
       railwayLayers.push(railLayer);
       if(!layer.layout) layer.layout = {};
-      layer.layout.visibility = "none"; //いったん非表示→後工程（convert.js）で削除
+      layer.layout.visibility = "none";
+      
+    }else if(layer["source-layer"] == "AdmBdry"){
+      const bdryLayer = JSON.parse(JSON.stringify(layer));
+      boundaryLayers.push(bdryLayer);
+      if(!layer.layout) layer.layout = {};
+      layer.layout.visibility = "none";
+      
     }else if(layer.type == "fill-extrusion" || layer.id == "注記シンボル付き重なり"){
+      
+      if(boundaryLayers){
+        boundaryLayers.forEach( boundaryLayer => {
+          railwayStyleStockLayers.push(boundaryLayer);
+        });
+        boundaryLayers.length = 0;
+      }
+      
       if(railwayLayers){
         railwayLayers.forEach( railLayer => {
           railwayStyleStockLayers.push(railLayer);
         });
-        console.log(railwayLayers);
         railwayLayers.length = 0;
-        console.log(railwayLayers);
-        console.log(layer.id);
       }
+      
       railwayStyleStockLayers.push(layer);
+      
     }else{
       railwayStyleStockLayers.push(layer);
     }
