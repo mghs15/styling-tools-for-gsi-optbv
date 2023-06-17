@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const prefix = process.argv[3] || "";
+
 const style = require('./template.json');
 
 const layers = style.layers;
@@ -530,6 +532,51 @@ const changeColor = (arr, info={}) => {
   
 }
 
+const additionalChange = (layer) => {
+  
+  if(!layer["source-layer"] || (
+     layer["source-layer"] != "RailCL"
+  )){
+    return layer;
+  }
+  
+  if(layer["source-layer"] == "RailCL" && layer.type == "line"){
+    if(!layer.layout) layer.layout = {};
+    layer.layout["line-cap"] = "butt";
+  }
+  if(layer.id.match("鉄道中心線地下トンネル")){
+    layer.paint["line-dasharray"] = [2, 2];
+  }
+  
+  return layer;
+  
+}
+
+const switchBuildingExtrusion = (layer, isExtrusion) => {
+  
+  if(!layer["source-layer"] || (
+     layer["source-layer"] != "BldA" && 
+     layer["source-layer"] != "StrctArea"
+  )){
+    return layer;
+  }
+  
+  if(layer["source-layer"] == "BldA" || layer["source-layer"] == "StrctArea" ){
+    if(!layer.layout) layer.layout = {};
+    
+    if(isExtrusion && layer.type != "fill-extrusion"){
+      layer.layout.visibility = "none";
+    }else if(!isExtrusion && layer.type == "fill-extrusion"){
+      layer.layout.visibility = "none";
+    }
+    return layer;
+  }
+  
+  return layer;
+  
+}
+
+
 /*************************************************/
 /*メイン                                         */
 /*************************************************/
@@ -538,7 +585,6 @@ const stockLayers = [];
 
 //テキスト形式を配列へ
 layers.forEach( layer => {
-  if(layer.visibility && layer.visibility == "none") return;
   if(layer.paint){
     for( name in layer.paint){
       if(name.match("color")){
@@ -553,6 +599,11 @@ layers.forEach( layer => {
   if(layer.layout && layer.layout.visibility == "none"){
     
   }else{
+  
+    // 建物については、prefix のあるなしで 3D と 2D を分岐
+    layer = switchBuildingExtrusion(layer, prefix);
+    layer = additionalChange(layer);
+    
     stockLayers.push(layer);
   }
   
@@ -561,7 +612,7 @@ layers.forEach( layer => {
 style.layers = stockLayers;
 
 
-//鉄道強調用
+//鉄道強調（レイヤ順の変更を伴う）
 const railwayLayers = [];
 const boundaryLayers = [];
 const railwayStyleStockLayers = [];
@@ -581,6 +632,8 @@ if(mode == "railway"){
       layer.layout.visibility = "none";
       
     }else if(layer.type == "fill-extrusion" || layer.id == "注記シンボル付き重なり"){
+      
+      // fill-extrusion か注記の前に挿入する
       
       if(boundaryLayers){
         boundaryLayers.forEach( boundaryLayer => {
@@ -612,7 +665,6 @@ console.log(tmp);
 
 console.log(`layer count: ${style.layers.length}`);
 
-const prefix = process.argv[3] || "";
 
 const resstring = JSON.stringify(style);
 fs.writeFileSync(`./docs/${prefix}${mode}.json`, resstring);

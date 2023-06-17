@@ -528,23 +528,21 @@ layers.forEach( layer => {
   
   //追加レイヤ対応(1)
   //既存スタイルの調整
-  if(process.argv[2]){
-    layer = additionalChange(layer);
-  }
+  //if(process.argv[2]){
+  //  layer = additionalChange(layer);
+  //}
   
   stockLayers.push(layer);
   
   //追加レイヤ対応(2)
   //スタイルレイヤの追加
-  if(process.argv[2]){
-    if(!stock.isFinishedFlag && layer.id == "送電線破線"){
-      console.log(`added addtional layers`);
-      stock.isFinishedFlag = true;
-      const additionalLayers = require("./additionalLayers.json");
-      additionalLayers.forEach( additionalLayer => {
-        stockLayers.push(additionalLayer);
-      });
-    }
+  if(!stock.isFinishedFlag && layer.id == "送電線破線"){
+    console.log(`added addtional layers`);
+    stock.isFinishedFlag = true;
+    const additionalLayers = require("./additionalLayers.json");
+    additionalLayers.forEach( additionalLayer => {
+      stockLayers.push(additionalLayer);
+    });
   }
   
 });
