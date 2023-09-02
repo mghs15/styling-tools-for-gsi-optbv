@@ -4,8 +4,9 @@
 <meta charset='utf-8' />
 <title>Web地図テンプレ</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://maps.gsi.go.jp/vector/mapbox/1.13.0/mapbox-gl-gsi.js'></script>
-<link href='https://maps.gsi.go.jp/vector/mapbox/1.13.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
+<link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
+<script src='https://unpkg.com/pmtiles@2.5.0/dist/index.js'></script>
 <style>
 body { margin:0; padding:0;}
 
@@ -120,9 +121,12 @@ const queries = getQueryParams();
 const styleName = queries.style || "basic";
 
 /*************************************************/
-/*Mapbox 関係設定                                */
+/*MapLibre+PMTiles 関係設定                      */
 /*************************************************/
-const map = new mapboxgl.Map({
+let protocol = new pmtiles.Protocol();
+maplibregl.addProtocol("pmtiles", protocol.tile);
+
+const map = new maplibregl.Map({
   container: 'map', // container id
   hash: true, //add #position on URL
   style: `./${styleName}.json`, // stylesheet location
@@ -136,9 +140,9 @@ const map = new mapboxgl.Map({
 });
 
 
-map.addControl(new mapboxgl.NavigationControl(), 'top-left');
-map.addControl(new mapboxgl.ScaleControl() );
-map.addControl(new mapboxgl.AttributionControl({compact: true}), 'top-right');
+map.addControl(new maplibregl.NavigationControl(), 'top-left');
+map.addControl(new maplibregl.ScaleControl() );
+map.addControl(new maplibregl.AttributionControl({compact: true}), 'top-right');
 
 map.showTileBoundaries = false;
 
@@ -159,7 +163,7 @@ const makePopupHtml = (prop) => {
   
 }
 
-const popup = new mapboxgl.Popup();
+const popup = new maplibregl.Popup();
 map.on('click', function(e) {
   
   //初期化
