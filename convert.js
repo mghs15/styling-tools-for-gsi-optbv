@@ -198,6 +198,12 @@ const convertColor = (colorInfo, arr=[], info={}) => {
     return arr;
   }else if(typeof(colorInfo)=="string" && ( colorInfo.match(/^rgb/) || colorInfo.match(/^hsl/) || colorInfo.match(/^-/))){
     
+    // チェック用
+    if(colorInfo == "-road-all-back-"){
+      console.log(info);
+    }
+    
+    
     //修正
     let colArr1;
     if(colorInfo.match(/^rgb/) || colorInfo.match(/^hsl/)){
@@ -255,8 +261,8 @@ const colorSets = {
     '-road-highway-main-': [ 255, 190, 190 ],
     '-road-prefectural-main-': [ 255, 210, 110 ],
     '-road-expressway-main-': [ 0, 150, 0 ],
-    '-road-all-back-': [ 220, 220, 220 ],
-    '-road-edge-': [ 255, 255, 255 ],
+    '-road-all-back-': [ 220, 220, 220 ], // 今のところ利用していない
+    '-road-edge-': [ 180, 180, 180 ],
     
     '-building-normal-main-': [ 230, 230, 230 ],
     '-building-middle-main-': [ 220, 220, 220 ],
@@ -471,11 +477,13 @@ const changeColor = (arr, info={}) => {
   let l = hsla[2];
   let a = hsla[3]
   
-  
   if(mode == "mono"){
   //モノクロ
     if( s > 0 ) s = 1;
     if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
+    
+    if(info?.colorInfo && info.colorInfo.match(/-road-normal-main-/)) l = 99;
+
     return(["hsla", h, s + "%", l + "%", a]);
   
   }else if(mode == "mono2"){
@@ -540,12 +548,10 @@ const additionalChange = (layer) => {
     return layer;
   }
   
-  if(layer["source-layer"] == "RailCL" && layer.type == "line"){
-    if(!layer.layout) layer.layout = {};
-    layer.layout["line-cap"] = "butt";
-  }
   if(layer.id.match("鉄道中心線地下トンネル")){
     layer.paint["line-dasharray"] = [2, 2];
+    if(!layer.layout) layer.layout = {};
+    layer.layout["line-cap"] = "butt";
   }
   
   return layer;

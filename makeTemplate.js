@@ -325,9 +325,19 @@ const railLayerConvert = (layer) => {
     ];
   }
   
+  // width 設定（駅、複線、単線）
   let wSta = 3;
   let wDbl = 2;
-  let wSgl = 1;
+  let wSgl = 1
+  
+  // ZL 拡大時の拡幅
+  let switchZL1 = 13;
+  let switchZL2 = 15;
+  let _w = 2; // 変化させる width
+  
+  if(layer.id.match("鉄道中心線地下トンネルククリ")){
+    layer.layout.visibility = "none";
+  }
   
   if(layer.id.match("鉄道中心線駅ククリ")){
     layer.layout.visibility = "none";
@@ -354,15 +364,15 @@ const railLayerConvert = (layer) => {
       "interpolate",
       [ "linear" ],
       [ "zoom" ],
-      11,["case",
+      switchZL1,["case",
         [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 2,
         [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 2,
         wSgl + 2
       ],
-      15,["case",
-        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 1 + 2,
-        [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 1 + 2,
-        wSgl + 1 + 2
+      switchZL2,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + _w + 2,
+        [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + _w + 2,
+        wSgl + _w + 2
       ]
     ];
     layer.layout["line-cap"] = "butt";
@@ -370,53 +380,23 @@ const railLayerConvert = (layer) => {
     return layer;
   }
   
-  /************************************
-  if(layer.id.match("鉄道中心線地下トンネル")){
-    layer.paint["line-dasharray"] = [2, 2];
-    layer.paint["line-width"] = 1;
-    layer.paint["line-opacity"] = 1;
-    layer.paint["line-gap-width"] = [
-      "interpolate",
-      [ "linear" ],
-      [ "zoom" ],
-      11,["case",
-        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta,
-        0
-      ],
-      15,["case",
-        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 1,
-        0
-      ]
-    ];
-    
-    return layer;
-  }
-  ************************************/
+  const outlineWidth = layer.id.match(/旗竿/) ? 1 : 0;
   
   layer.paint["line-width"] = [
     "interpolate",
     [ "linear" ],
     [ "zoom" ],
-    11,["case",
-      [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta,
-      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl,
-      wSgl
+    switchZL1,["case",
+      [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta - outlineWidth,
+      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl - outlineWidth,
+      wSgl - outlineWidth
     ],
-    15,["case",
-      [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 1,
-      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 1,
-      wSgl + 1
+    switchZL2,["case",
+      [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + _w - outlineWidth + 2, // 大縮尺の駅の幅は広めに
+      [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + _w - outlineWidth,
+      wSgl + _w - outlineWidth
     ]
   ];
-  
-  /********************************
-  layer.paint["line-width"] = ["case",
-    [ "==", [ "get", "vt_sngldbl" ], "駅部分"], 4,
-    [ "==", [ "get", "vt_sngldbl" ], "複線以上"], ["case",  ["==", [ "get", "vt_rtcode" ], "JR"], 3, 2],
-    ["==", [ "get", "vt_rtcode" ], "JR" ], 2,
-    1
-  ];
-  ********************************/
   
   return layer;
   
