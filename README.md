@@ -30,7 +30,7 @@
 もとになる `std.json` からひな型となる `template.json` を作成する。
   * 地図デザインで使われている色を、地物のカテゴリごとに分類する。
   * 分類した色を文字列として `template.json` に埋め込む（`template.json` そのものは Mapbox GL JS で利用できない。）。
-  * 追加レイヤ（鉄道駅、`fill-extrusion` による建物 3D レイヤ）の統合。
+  * 追加レイヤ `additionalLayers.json`（鉄道駅、`fill-extrusion` による建物 3D レイヤ）の統合。
 ### 2. `convert.js`
 作成した `template.json` の文字列を使いたい配色セットで置き換える。
   * 配色セットは、今のところ、`convert.js` にハードコードされている。
