@@ -536,7 +536,7 @@ const changeColor = (arr, info={}) => {
     if( l < 100 && l > 0 && !info["prop-name"].match("text-color")) l = l + (100 - l) * 0.5;
     
     if(info && info.colorInfo && info.colorInfo.match(/-border-muni-main-/)){
-       h = 230; s = 50; l = 50;
+       h = 270; s = 100; l = 50;
     }
     
     return(["hsla", h, s + "%", l + "%", a]);

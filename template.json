@@ -15071,12 +15071,20 @@
             "type": "line",
             "source": "v",
             "source-layer": "AdmBdry",
+            "filter": [
+                "==",
+                [
+                    "get",
+                    "vt_code"
+                ],
+                1212
+            ],
             "layout": {
                 "line-join": "round",
                 "line-cap": "round"
             },
             "paint": {
-                "line-color": "-border-muni-main-#0.25",
+                "line-color": "-border-muni-main-#0.1",
                 "line-width": 6
             },
             "metadata": {
