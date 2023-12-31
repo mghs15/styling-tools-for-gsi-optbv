@@ -279,6 +279,11 @@ const boundaryLayerConvert = (layer) => {
     layer.paint["line-dasharray"] = [ 10, 2, 1, 2 ];
   }
   
+  if(layer.paint["line-dasharray"]){
+    layer.paint["line-dasharray"] = layer.paint["line-dasharray"].map( x => x/2);
+    layer.layout["line-join"] = "round";
+  }
+  
   return layer;
 }
 
@@ -442,50 +447,6 @@ const buildingLayerConvert = (layer) => {
   
 }
 
-const bndrLayerConvert = (layer) => {
-  
-  //順番を注記群の直前に持ってくる処理が必要
-  if(!layer["source-layer"] || layer["source-layer"] != "AdmBdry"){
-    return layer;
-  }
-  
-  if(layer.paint["line-dasharray"]){
-    layer.paint["line-dasharray"] = layer.paint["line-dasharray"].map( x => x/2);
-    layer.layout["line-join"] = "round";
-  }
-  
-  return layer;
-  
-}
-
-const additionalChange = (layer) => {
-  
-  if(!layer["source-layer"] || (
-     layer["source-layer"] != "RailCL" && 
-     layer["source-layer"] != "BldA" && 
-     layer["source-layer"] != "StrctArea"
-  )){
-    return layer;
-  }
-  
-  if(layer["source-layer"] == "BldA"){
-    if(!layer.layout) layer.layout = {};
-    layer.layout.visibility = "none";
-    return layer;
-  }
-  
-  if(layer["source-layer"] == "RailCL" && layer.type == "line"){
-    if(!layer.layout) layer.layout = {};
-    layer.layout["line-cap"] = "butt";
-  }
-  if(layer.id.match("鉄道中心線地下トンネル")){
-    layer.paint["line-dasharray"] = [2, 2];
-  }
-  
-  return layer;
-  
-}
-
 
 /*************************************************/
 /*メイン                                         */
@@ -520,13 +481,6 @@ layers.forEach( layer => {
   layer = boundaryLayerConvert(layer);
   layer = roadLayerConvert(layer);
   layer = railLayerConvert(layer);
-  layer = bndrLayerConvert(layer);
-  
-  //追加レイヤ対応(1)
-  //既存スタイルの調整
-  //if(process.argv[2]){
-  //  layer = additionalChange(layer);
-  //}
   
   stockLayers.push(layer);
   

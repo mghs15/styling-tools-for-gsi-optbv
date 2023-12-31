@@ -15067,6 +15067,7 @@
         },
         {
             "id": "行政区画界線（強調）",
+            "minzoom": 8,
             "type": "line",
             "source": "v",
             "source-layer": "AdmBdry",
