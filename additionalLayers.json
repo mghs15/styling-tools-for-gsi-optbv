@@ -33,6 +33,24 @@
   },
   
   {
+      "id": "行政区画界線（強調）",
+      "type": "line",
+      "source": "v",
+      "source-layer": "AdmBdry",
+      "layout": {
+          "line-join": "round",
+          "line-cap": "round"
+      },
+      "paint": {
+          "line-color": "-border-muni-main-#0.25",
+          "line-width": 6
+      },
+      "metadata": {
+        "additional": true
+      }
+  },
+  
+  {
     "id": "建築物3D",
     "type": "fill-extrusion",
     "source": "v",

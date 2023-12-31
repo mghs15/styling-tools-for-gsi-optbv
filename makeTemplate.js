@@ -442,6 +442,21 @@ const buildingLayerConvert = (layer) => {
   
 }
 
+const bndrLayerConvert = (layer) => {
+  
+  //順番を注記群の直前に持ってくる処理が必要
+  if(!layer["source-layer"] || layer["source-layer"] != "AdmBdry"){
+    return layer;
+  }
+  
+  if(layer.paint["line-dasharray"]){
+    layer.paint["line-dasharray"] = layer.paint["line-dasharray"].map( x => x/2);
+    layer.layout["line-join"] = "round";
+  }
+  
+  return layer;
+  
+}
 
 const additionalChange = (layer) => {
   
@@ -505,6 +520,7 @@ layers.forEach( layer => {
   layer = boundaryLayerConvert(layer);
   layer = roadLayerConvert(layer);
   layer = railLayerConvert(layer);
+  layer = bndrLayerConvert(layer);
   
   //追加レイヤ対応(1)
   //既存スタイルの調整

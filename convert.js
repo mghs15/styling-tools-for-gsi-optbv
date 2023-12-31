@@ -504,7 +504,7 @@ const changeColor = (arr, info={}) => {
     }
     
     return(["hsla", h, s + "%", l + "%", a]);
-  
+    
   }else if(mode == "railway"){
   //モノクロ（鉄道の色調整）
     h = 200;
@@ -527,6 +527,20 @@ const changeColor = (arr, info={}) => {
     
     return(["hsla", h, s + "%", l + "%", a]);
   
+  }else if(mode == "muni"){
+  //モノクロ（自治体境界のみ）
+    h = 200;
+    if( s > 0 ) s = 10;
+    if( s > 0 && info["prop-name"].match("text-color") ) s = 30;
+    if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
+    if( l < 100 && l > 0 && !info["prop-name"].match("text-color")) l = l + (100 - l) * 0.5;
+    
+    if(info && info.colorInfo && info.colorInfo.match(/-border-muni-main-/)){
+       h = 230; s = 50; l = 50;
+    }
+    
+    return(["hsla", h, s + "%", l + "%", a]);
+  
   }else{
     
     const divNum = 1;
@@ -542,9 +556,16 @@ const changeColor = (arr, info={}) => {
 
 const additionalChange = (layer) => {
   
-  if(!layer["source-layer"] || (
-     layer["source-layer"] != "RailCL"
-  )){
+  if(!layer["source-layer"]) return layer;
+  
+  if(layer["source-layer"] == "AdmBdry"){
+    if(mode != "muni" && layer.id == "行政区画界線（強調）"){
+      layer.layout["visibility"] = "none";
+    }
+    return layer;
+  }
+  
+  if(layer["source-layer"] != "RailCL"){
     return layer;
   }
   
@@ -665,6 +686,34 @@ if(mode == "railway"){
   style.layers = railwayStyleStockLayers;
 }
 
+if(mode == "muni"){
+  stockLayers.forEach( layer => {
+    if(layer["source-layer"] == "AdmBdry"){
+      const bdryLayer = JSON.parse(JSON.stringify(layer));
+      boundaryLayers.push(bdryLayer);
+      if(!layer.layout) layer.layout = {};
+      layer.layout.visibility = "none";
+      
+    }else if(layer.type == "fill-extrusion" || layer.id == "注記シンボル付き重なり"){
+      
+      // fill-extrusion か注記の前に挿入する
+      
+      if(boundaryLayers){
+        boundaryLayers.forEach( boundaryLayer => {
+          railwayStyleStockLayers.push(boundaryLayer);
+        });
+        boundaryLayers.length = 0;
+      }
+      
+      railwayStyleStockLayers.push(layer);
+      
+    }else{
+      railwayStyleStockLayers.push(layer);
+    }
+  });
+  
+  style.layers = railwayStyleStockLayers;
+}
 console.log(tmp);
 //console.log(tmp2);
 //console.log(layers);
