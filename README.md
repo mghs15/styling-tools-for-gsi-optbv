@@ -13,12 +13,14 @@
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=railway
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni
 ## 3D 風
 元のスタイルの構造を多少加工。個人的な感覚では見やすくしています。
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-basic
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono2
 * https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-railway
+* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-muni
 
 ## 派生元レポジトリ
 以下のレポジトリでの成果をベースにしています。参考文献等もご参照ください。
@@ -30,7 +32,7 @@
 もとになる `std.json` からひな型となる `template.json` を作成する。
   * 地図デザインで使われている色を、地物のカテゴリごとに分類する。
   * 分類した色を文字列として `template.json` に埋め込む（`template.json` そのものは Mapbox GL JS で利用できない。）。
-  * 追加レイヤ `additionalLayers.json`（鉄道駅、`fill-extrusion` による建物 3D レイヤ）の統合。
+  * 追加レイヤ `additionalLayers.json`（鉄道駅、行政界強調用レイヤ、`fill-extrusion` による建物 3D レイヤ）の統合。
 ### 2. `convert.js`
 作成した `template.json` の文字列を使いたい配色セットで置き換える。
   * 配色セットは、今のところ、`convert.js` にハードコードされている。
@@ -54,6 +56,8 @@
 
 ## 変更履歴
 主なもののみ記載
+### 2023/12/31
+* 自治体の境界（`AdmBndr` レイヤ）を強調したスタイル（[muni](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni)）を追加。
 ### 2023/09/01
 * 国土地理院最適化ベクトルタイルの [PMTiles 版の公開とファイルシステム版の公開終了予告](https://github.com/gsi-cyberjapan/optimal_bvmap)に伴い、本レポジトリで作成されるスタイルも PMTiles 版へ移行（サンプルも PMTiles 版へ変更）。
 ### 2023/06/17
