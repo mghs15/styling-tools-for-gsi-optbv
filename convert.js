@@ -541,6 +541,28 @@ const changeColor = (arr, info={}) => {
     
     return(["hsla", h, s + "%", l + "%", a]);
   
+  }else if(mode == "chisui"){
+  //モノクロ（水面・地形等）
+    h = 200;
+    if( s > 0 ) s = 10;
+    if( s > 0 && info["prop-name"].match("text-color") ) s = 30;
+    if( l < 50 && l > 0 && !info["prop-name"].match("text-color")) l = l + (50 - l);
+    if( l < 100 && l > 0 && !info["prop-name"].match("text-color")) l = l + (100 - l) * 0.5;
+    
+    if(info && info.colorInfo && info.colorInfo.match(/-background-base-main-/)){
+      h = 0; s = 100; l = 100;
+    }else if(info && info.colorInfo && info.colorInfo.match(/-water-main-vivid-/)){
+      h = 222; s = 100; l = 50;
+    }else if(info && info.colorInfo && info.colorInfo.match(/-water-main-/)){
+      h = 210; s = 100; l = 75;
+    }else if(info && info.colorInfo && info.colorInfo.match(/-landform-main-main-/)){
+      h = 120; s = 100; l = 30;
+    }else if(info && info.colorInfo && info.colorInfo.match(/-border-muni-main-/)){
+       h = 230; s = 50; l = 30;
+    }
+    
+    return(["hsla", h, s + "%", l + "%", a]);
+  
   }else{
     
     const divNum = 1;
