@@ -56,6 +56,8 @@
 
 ## 変更履歴
 主なもののみ記載
+### 2024/05/26
+* 地形・水域等を強調したスタイル（[chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)）を追加。
 ### 2023/12/31
 * 自治体の境界（`AdmBndr` レイヤ）を強調したスタイル（[muni](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni)）を追加。
 ### 2023/09/01
