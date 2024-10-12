@@ -81,7 +81,7 @@
 主なもののみ記載
 ### 2024/10/12
 * 色やレイヤの設定を外部ファイル化した `convert2.js` を追加し、`setup.js` での利用ツールを `convert2.js` へ変更。
-* `dark2.json` のレイヤ順を変更し、鉄道の優先度を挙げた `darkrail.json` を追加。
+* `dark2.json` のレイヤ順を変更し、鉄道の優先度を挙げたスタイル（[darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=darkrail)）を追加。
 * `convert2.js` の使用に伴い、既存スタイルの一部デザインを変更。
 ### 2024/05/26
 * 地形・水域等を強調したスタイル（[chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)）を追加。
