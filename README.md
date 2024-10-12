@@ -58,19 +58,19 @@
   * 配色ファイル
     * CSV ファイル
     * フィールドは以下の通り
-      * colorset-name: カラーセット名（いまのところ不使用）
-      * color-key: 色キー名
-      * type: `rgb` で固定（いまのところ不使用）
-      * R: 赤
-      * G: 緑
-      * B: 青
+      1. colorset-name: カラーセット名（いまのところ不使用）
+      2. color-key: 色キー名
+      3. type: `rgb` で固定（いまのところ不使用）
+      4. R: 赤
+      5. G: 緑
+      6. B: 青
   * レイヤの非表示・順序設定ファイル
     * CSV ファイル
     * フィールドは以下の通り
-      * number: レイヤのデフォルト順。大きい方が優先度が高い
-      * layer-id: スタイルレイヤの id
-      * visibility: レイヤの表示（`visible`）・非表示（`none`）のいずれか
-      * z-index: レイヤの順序。大きい方が優先度が高い
+      1. number: レイヤのデフォルト順。大きい方が優先度が高い
+      2. layer-id: スタイルレイヤの id
+      3. visibility: レイヤの表示（`visible`）・非表示（`none`）のいずれか
+      4. z-index: レイヤの順序。大きい方が優先度が高い
   * 色以外の、線幅や破線のデザイン等については、`convert.js` 内にハードコードが必要（鉄道メインのスタイルに適用中）。
 ### 3. `setup.js`
 スタイル一式を `docs` フォルダへ出力する。
@@ -80,8 +80,8 @@
 ## 変更履歴
 主なもののみ記載
 ### 2024/10/12
-* 色やレイヤの設定を外部ファイル化した `convert2.js` を追加し、`setup.js` での利用ツールを `convert2.js` へ変更。
-* `dark2.json` のレイヤ順を変更し、鉄道の優先度を挙げたスタイル（[darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=darkrail)）を追加。
+* 色やレイヤの設定を外部ファイル化した `convert2.js` を追加し、`setup.js` で利用するツールを `convert2.js` へ変更。
+* `dark2.json` のレイヤ順等を変更し、鉄道の優先度を上げたスタイル（[darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=darkrail)）を追加。
 * `convert2.js` の使用に伴い、既存スタイルの一部デザインを変更。
 ### 2024/05/26
 * 地形・水域等を強調したスタイル（[chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)）を追加。
