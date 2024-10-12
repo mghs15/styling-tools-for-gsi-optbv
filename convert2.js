@@ -335,27 +335,26 @@ const additionalChange = (layer) => {
   
   // 何か追加でスタイル変更が必要であれば、ここへ記述する。
   
-  /*
   if(!layer["source-layer"]) return layer;
   
+  /*
   if(layer["source-layer"] == "AdmBdry"){
     if(mode != "muni" && layer.id == "行政区画界線（強調）"){
       layer.layout["visibility"] = "none";
     }
     return layer;
   }
+  */
   
   if(layer["source-layer"] != "RailCL"){
     return layer;
   }
   
-  if(layer.id.match("鉄道中心線地下トンネル")){
+  if(outputFileName.match("rail") && layer.id.match("鉄道中心線地下トンネル")){
     layer.paint["line-dasharray"] = [2, 2];
     if(!layer.layout) layer.layout = {};
     layer.layout["line-cap"] = "butt";
   }
-  
-  */
   
   return layer;
 }
