@@ -31,15 +31,15 @@
 ### 1. `makeTemplate.js`
 もとになる `std.json` からひな型となる `template.json` を作成する。
   * 地図デザインで使われている色を、地物のカテゴリごとに分類する。
-  * 分類した色を文字列として `template.json` に埋め込む（`template.json` そのものは Mapbox GL JS で利用できない。）。
+  * 分類した色を文字列（色キー名）として `template.json` に埋め込む（`template.json` そのものは Mapbox GL JS で利用できない。）。
   * 追加レイヤ `additionalLayers.json`（鉄道駅、行政界強調用レイヤ、`fill-extrusion` による建物 3D レイヤ）の統合。
-### 2. `convert.js`
+### 2.1. `convert.js`
 作成した `template.json` の文字列を使いたい配色セットで置き換える。
   * 配色セットは、今のところ、`convert.js` にハードコードされている。
   * 配色セットの中から、どの配色にするかについては、１つ目の引数に渡す。
   * 主な関数は２つ
     * `convertColor()`
-      * 文字列（`rgb(r,g,b)`、`hsl(h,s%,l%)`）、キー名の場合：文字列は配列形式（`["rgba", r, g, b, a]` 等）へ変換・キー名の場合はカラーセットから目的の rgb を配列形式を取得→ `changeColor()` に渡す→配列からテキスト形式（`rgba(r,g,b,a)` 等）に変換して返す。
+      * 文字列（`rgb(r,g,b)`、`hsl(h,s%,l%)`）、色キー名の場合：文字列は配列形式（`["rgba", r, g, b, a]` 等）へ変換・キー名の場合はカラーセットから目的の rgb を配列形式を取得→ `changeColor()` に渡す→配列からテキスト形式（`rgba(r,g,b,a)` 等）に変換して返す。
       * 配列：再帰的に処理を行う。最後にとりまとめた結果を配列で返す。
       * その他：そのままの値を返す。
     * `changeColor()`
@@ -49,13 +49,40 @@
   * 色以外にも、線幅や破線のデザイン等を変更。
   * 引数に何らかの文字を渡すと、建物の 3D と 2D 表現を切り替え。
   * スタイルによっては、レイヤの順番を変更（例：`railway` スタイル）。
+### 2.2. `convert2.js`
+`convert.js` の配色セット及びレイヤの非表示・順序設定を外部ファイル化したのもの。
+  * 引数は、`配色ファイルパス`、`レイヤの非表示・順序設定ファイルパス`、`出力ファイルパス`
+    ```
+    node convert2.js ./src/color-basic.csv ./src/layerinfo-2d.csv ./docs/basic.json
+    ```
+  * 配色ファイル
+    * CSV ファイル
+    * フィールドは以下の通り
+      * colorset-name: カラーセット名（いまのところ不使用）
+      * color-key: 色キー名
+      * type: `rgb` で固定（いまのところ不使用）
+      * R: 赤
+      * G: 緑
+      * B: 青
+  * レイヤの非表示・順序設定ファイル
+    * CSV ファイル
+    * フィールドは以下の通り
+      * number: レイヤのデフォルト順。大きい方が優先度が高い
+      * layer-id: スタイルレイヤの id
+      * visibility: レイヤの表示（`visible`）・非表示（`none`）のいずれか
+      * z-index: レイヤの順序。大きい方が優先度が高い
+  * 色以外の、線幅や破線のデザイン等については、`convert.js` 内にハードコードが必要（いまのところ未設定）。
 ### 3. `setup.js`
 スタイル一式を `docs` フォルダへ出力する。
-  * 内部では、`convert.js` を呼び、`template.json` を指定されたスタイル一式へ変換する。
-  * どのスタイルを出力するかは、変数 `list` にハードコード。
+  * 内部では、`convert2.js` を呼び、`template.json` を指定されたスタイル一式へ変換する。
+  * `convert2.js` 用の引数は、配列として、変数 `list` にハードコード。
 
 ## 変更履歴
 主なもののみ記載
+### 2024/10/12
+* 色やレイヤの設定を外部ファイル化した `convert2.js` を追加し、`setup.js` での利用ツールを `convert2.js` へ変更。
+* `dark2.json` のレイヤ順を変更し、鉄道の優先度を挙げた `darkrail.json` を追加。
+* `convert2.js` の使用に伴い、既存スタイルの一部デザインを変更。
 ### 2024/05/26
 * 地形・水域等を強調したスタイル（[chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)）を追加。
 ### 2023/12/31
