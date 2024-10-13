@@ -97,13 +97,16 @@ const convertColor = (colorInfo, arr=[], info={}) => {
     const opacity = carr[4];
   
     if(info["prop-name"].match("text-halo") ){
-      //縁取りの白は区別
+      // 文字の縁取り（基本的に白と想定）
       colorInfo2 = "-text-white-halo-" + "#" + opacity;
     }else if(info["prop-name"].match("text")){
+      // 文字の色
       colorInfo2 = setupColor(colorInfo, "text");
-      
     }else if(info["source-layer"] == "RdCL"){
-    
+      // 道路
+      // * 白 -> 市町村道（-road-normal-main-）
+      // * 灰 -> 道路の枠線（-road-edge-）
+      // * その他 -> 色に応じてキーを振り分け
       if(colorInfo.match(/\(255,255,255/)){ 
         colorInfo2 = "-road-normal-main-" + "#" + opacity;
       }else if(colorInfo.match(/\(173,173,173/)){
@@ -117,14 +120,17 @@ const convertColor = (colorInfo, arr=[], info={}) => {
       }else{
         colorInfo2 = setupColor(colorInfo);
       }
-      
     }else if(info["source-layer"] == "RailCL"){
-    
+      // 鉄道
+      // * 白 -> 旗竿部分か駅の部分かに分類
+      // * 灰 -> 鉄道全般（-railway-normal-main-）
+      // * その他 -> 色に応じてキーを振り分け
       if(colorInfo.match(/\(255,255,255/) && info.id.match("鉄道中心線旗竿")){
+        // 旗竿部分の白色
         colorInfo2 = "-railway-normal-blank-" + "#" + opacity;
       }else if(colorInfo.match(/\(255,255,255/)){
-        //基本的に「駅部分」の白を想定
-        //colorInfo2 = "-railway-normal-main-" + "#" + opacity;
+        //旗竿以外の白色（基本的に「駅部分」の白を想定）
+        // colorInfo2 = "-railway-normal-main-" + "#" + opacity;
         colorInfo2 = "-railway-station-main-" + "#" + opacity;
       }else if(colorInfo.match(/\(173,173,173/)){
         colorInfo2 = "-railway-normal-main-" + "#" + opacity;
@@ -136,6 +142,7 @@ const convertColor = (colorInfo, arr=[], info={}) => {
         colorInfo2 = setupColor(colorInfo);
       }
     }else{ 
+      // その他の地物は色に応じてキーを振り分け
       colorInfo2 = setupColor(colorInfo);
     }
     
