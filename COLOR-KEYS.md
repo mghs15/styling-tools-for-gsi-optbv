@@ -2,7 +2,7 @@
 
 [styling-tools-for-gsi-optbv](https://github.com/mghs15/styling-tools-for-gsi-optbv) で利用している色キーの一覧。
 
-| 役割毎のキー名               |元の色             |`source-layer` 条件|属性値名条件 |説明|
+| 色キー名                     |元の色             |`source-layer` 条件|属性値名条件 |説明|
 |:--                           |:--                |:--                |:--          | :--|
 | `-background-base-main-`     |`rgb(255,255,255)` |                   |             |背景|
 | `-border-muni-main-`         |`rgb(68,0,128)`    |                   |             |市区町村界（紫）等|
@@ -17,7 +17,7 @@
 | `-line-gray-`                |`rgb(231,39,65)`   |                   |             |航路|
 |                              |`rgb(150,150,150)` |                   |             |特定地区界等|
 |                              |`rgb(100,100,100)` |                   |             |送電線等|
-|                              |`rgb(200,200,200)` |                   |             |ダム(面)等|
+|                              |`rgb(200,200,200)` |                   |             |ダム（面）等|
 | `-railway-normal-blank-`     |`rgb(255,255,255)` |RailCL             |             |JRの白黒表現の白の部分|
 | `-railway-normal-main-`      |`rgb(100,0,0)`     |                   |             |鉄道|
 |                              |`rgb(173,173,173)` |RailCL             |             |鉄道|
@@ -39,14 +39,25 @@
 | `-text-green-main-`          |`rgb(19,97,69)`    |                   |`text-*`     |元が緑の文字色（駅名、路線名等）|
 | `-text-white-halo-`          |`rgb(255,255,255)` |                   |`text-halo-*`|文字の縁取りの色|
 | `-text-white-main-`          |`rgb(255,255,255)` |                   |`text-*`     |元が白の文字色|
-| `-water-main-main-`          |`rgb(190,210,255)` |                   |`text-*`     |水域関係の文字色（水面と同じ色|
+| `-water-main-main-`          |`rgb(190,210,255)` |                   |`text-*`     |水域関係の文字色（水面と同じ色）|
 |                              |`rgb(190,210,255)` |                   |             |水域|
 | `-water-main-vivid-`         |`rgb(0,0,255)`     |                   |`text-*`     |水域関係の文字色|
 |                              |`rgb(60,50,181)`   |                   |`text-*`     |水域関係の文字色|
 |                              |`rgb(20,90,255)`   |                   |`text-*`     |水域関係の文字色|
 |                              |`rgb(20,90,255)`   |                   |             |水涯線|
-|                              |`rgb(0,176,236)`   |                   |             |水涯線(小ZL海岸線)|
+|                              |`rgb(0,176,236)`   |                   |             |水涯線（小 ZL 海岸線）|
 |                              |`rgb(217,217,217)` |                   |             |万年雪|
 | `-wetland-main-main-`        |`rgb(200,250,230)` |                   |             |湿地|
 
+## 利用していないキー名
+
+準備はしているが、現在利用していない色キー
+* `-railway-shinkansen-main-`: 新幹線用
+* `-railway-all-back-`: 鉄道の縁取り用
+* `-road-major-main-`: 主要道路用
+* `-road-all-back-`: 道路の縁取り用
+* `-water-main-blank-`: 水域関係の縁取り用
+* `-text-blue-main-`: 水域関係の注記用
+
+see also [issue #1](https://github.com/mghs15/styling-tools-for-gsi-optbv/issues/1)
 

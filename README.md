@@ -9,18 +9,33 @@
 ![サンプル](./sample.png)
 ## 2D
 極力元のスタイルの構造を活かしています。
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=basic
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=railway
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni
+
+[basic](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=basic)
+/ [dark](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark)
+/ [dark2](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=dark2)
+/ [mono](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono)
+/ [mono2](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=mono2)
+/ [blueprint](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=blueprint)
+/ [radar](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=radar)
+/ [railway](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=railway)
+/ [muni](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni)
+/ [chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)
+/ [darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=darkrail)
+
 ## 3D 風
 元のスタイルの構造を多少加工。個人的な感覚では見やすくしています。
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-basic
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark2
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono2
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-railway
-* https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-muni
+
+[fx-basic](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-basic)
+/ [fx-dark](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark)
+/ [fx-dark2](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-dark2)
+/ [fx-mono](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono)
+/ [fx-mono2](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-mono2)
+/ [fx-blueprint](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-blueprint)
+/ [fx-radar](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-radar)
+/ [fx-railway](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-railway)
+/ [fx-muni](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-muni)
+/ [fx-chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-chisui)
+/ [fx-darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=fx-darkrail)
 
 ## 派生元レポジトリ
 以下のレポジトリでの成果をベースにしています。参考文献等もご参照ください。
