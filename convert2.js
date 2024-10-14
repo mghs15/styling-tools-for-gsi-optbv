@@ -350,13 +350,21 @@ const additionalChange = (layer) => {
     return layer;
   }
   
-  if(outputFileName.match("rail") && layer.id.match("鉄道中心線地下トンネル")){
-    layer.paint["line-dasharray"] = [2, 2];
-    if(!layer.layout) layer.layout = {};
-    layer.layout["line-cap"] = "butt";
+  if(outputFileName.match("rail")){
+    if(layer.id.match("鉄道中心線地下トンネル")){
+      layer.paint["line-dasharray"] = [2, 2];
+      if(!layer.layout) layer.layout = {};
+      layer.layout["line-cap"] = "butt";
+    }
+    /*
+    if(layer.id.match("鉄道中心線橋ククリ白")){
+      layer.paint["line-color"] = "-background-base-main-";
+    }
+    */
   }
   
   return layer;
+  
 }
 
 /*************************************************/
@@ -377,6 +385,9 @@ layers.forEach( layer => {
     layer.layout.visibility = info.visibility;
   }
   
+  // 追加の変更を適用
+  layer = additionalChange(layer);
+  
   if(layer.paint){
     for( name in layer.paint){
       if(name.match("color")){
@@ -388,12 +399,9 @@ layers.forEach( layer => {
     }
   }
   
-  
   if(layer.layout && layer.layout.visibility == "none"){
     // 非表示レイヤはリリースしない。
   }else{
-    // 追加の変更を適用
-    layer = additionalChange(layer);
     // リリースするレイヤセットへ追加
     stockLayers.push(layer);
   }

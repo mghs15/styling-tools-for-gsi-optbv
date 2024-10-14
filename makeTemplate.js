@@ -122,14 +122,16 @@ const convertColor = (colorInfo, arr=[], info={}) => {
       }
     }else if(info["source-layer"] == "RailCL"){
       // 鉄道
-      // * 白 -> 旗竿部分か駅の部分かに分類
+      // * 白 -> 旗竿部分 or 高架枠線（ククリ白） or 駅部分に分類
       // * 灰 -> 鉄道全般（-railway-normal-main-）
       // * その他 -> 色に応じてキーを振り分け
       if(colorInfo.match(/\(255,255,255/) && info.id.match("鉄道中心線旗竿")){
         // 旗竿部分の白色
         colorInfo2 = "-railway-normal-blank-" + "#" + opacity;
+      }else if(colorInfo.match(/\(255,255,255/) && info.id.match("ククリ白")){
+        colorInfo2 = "-background-base-main-" + "#" + opacity;
       }else if(colorInfo.match(/\(255,255,255/)){
-        //旗竿以外の白色（基本的に「駅部分」の白を想定）
+        // その他の白色（基本的に「駅部分」の白を想定）
         // colorInfo2 = "-railway-normal-main-" + "#" + opacity;
         colorInfo2 = "-railway-station-main-" + "#" + opacity;
       }else if(colorInfo.match(/\(173,173,173/)){
@@ -360,7 +362,27 @@ const railLayerConvert = (layer) => {
   }
   
   if(layer.id.match(/鉄道.*ククリ白/)){
-    layer.layout.visibility = "none";
+    //layer.layout.visibility = "none";
+    
+    wSta += 2; wDbl += 2; wSgl += 2; 
+    layer.paint["line-width"] = [
+      "interpolate",
+      [ "linear" ],
+      [ "zoom" ],
+      switchZL1,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + 2,
+        [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + 2,
+        wSgl + 2
+      ],
+      switchZL2,["case",
+        [ "==", [ "get", "vt_sngldbl" ], "駅部分"], wSta + _w + 2,
+        [ "==", [ "get", "vt_sngldbl" ], "複線以上"], wDbl + _w + 2,
+        wSgl + _w + 2
+      ]
+    ];
+    layer.layout["line-cap"] = "butt";
+    
+    return layer;
   }
   
   if(layer.id.match("鉄道中心線旗竿")){
@@ -519,4 +541,3 @@ console.log(`layer count: ${style.layers.length}`);
 
 const resstring = JSON.stringify(style, null, 4);
 fs.writeFileSync("template.json", resstring);
-

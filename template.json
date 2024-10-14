@@ -3691,7 +3691,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-station-main-#1",
+                "line-color": "-background-base-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -3711,7 +3711,7 @@
                             ],
                             "駅部分"
                         ],
-                        3,
+                        7,
                         [
                             "==",
                             [
@@ -3720,8 +3720,8 @@
                             ],
                             "複線以上"
                         ],
-                        2,
-                        1
+                        6,
+                        5
                     ],
                     15,
                     [
@@ -3734,7 +3734,7 @@
                             ],
                             "駅部分"
                         ],
-                        7,
+                        9,
                         [
                             "==",
                             [
@@ -3743,14 +3743,13 @@
                             ],
                             "複線以上"
                         ],
-                        4,
-                        3
+                        8,
+                        7
                     ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "butt"
             }
         },
         {
@@ -6079,7 +6078,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-station-main-#1",
+                "line-color": "-background-base-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -6099,7 +6098,7 @@
                             ],
                             "駅部分"
                         ],
-                        3,
+                        7,
                         [
                             "==",
                             [
@@ -6108,8 +6107,8 @@
                             ],
                             "複線以上"
                         ],
-                        2,
-                        1
+                        6,
+                        5
                     ],
                     15,
                     [
@@ -6122,7 +6121,7 @@
                             ],
                             "駅部分"
                         ],
-                        7,
+                        9,
                         [
                             "==",
                             [
@@ -6131,14 +6130,13 @@
                             ],
                             "複線以上"
                         ],
-                        4,
-                        3
+                        8,
+                        7
                     ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "butt"
             }
         },
         {
@@ -8553,7 +8551,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-station-main-#1",
+                "line-color": "-background-base-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -8573,7 +8571,7 @@
                             ],
                             "駅部分"
                         ],
-                        3,
+                        7,
                         [
                             "==",
                             [
@@ -8582,8 +8580,8 @@
                             ],
                             "複線以上"
                         ],
-                        2,
-                        1
+                        6,
+                        5
                     ],
                     15,
                     [
@@ -8596,7 +8594,7 @@
                             ],
                             "駅部分"
                         ],
-                        7,
+                        9,
                         [
                             "==",
                             [
@@ -8605,14 +8603,13 @@
                             ],
                             "複線以上"
                         ],
-                        4,
-                        3
+                        8,
+                        7
                     ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "butt"
             }
         },
         {
@@ -11027,7 +11024,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-station-main-#1",
+                "line-color": "-background-base-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -11047,7 +11044,7 @@
                             ],
                             "駅部分"
                         ],
-                        3,
+                        7,
                         [
                             "==",
                             [
@@ -11056,8 +11053,8 @@
                             ],
                             "複線以上"
                         ],
-                        2,
-                        1
+                        6,
+                        5
                     ],
                     15,
                     [
@@ -11070,7 +11067,7 @@
                             ],
                             "駅部分"
                         ],
-                        7,
+                        9,
                         [
                             "==",
                             [
@@ -11079,14 +11076,13 @@
                             ],
                             "複線以上"
                         ],
-                        4,
-                        3
+                        8,
+                        7
                     ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "butt"
             }
         },
         {
@@ -13501,7 +13497,7 @@
                 ]
             ],
             "paint": {
-                "line-color": "-railway-station-main-#1",
+                "line-color": "-background-base-main-#1",
                 "line-width": [
                     "interpolate",
                     [
@@ -13521,7 +13517,7 @@
                             ],
                             "駅部分"
                         ],
-                        3,
+                        7,
                         [
                             "==",
                             [
@@ -13530,8 +13526,8 @@
                             ],
                             "複線以上"
                         ],
-                        2,
-                        1
+                        6,
+                        5
                     ],
                     15,
                     [
@@ -13544,7 +13540,7 @@
                             ],
                             "駅部分"
                         ],
-                        7,
+                        9,
                         [
                             "==",
                             [
@@ -13553,14 +13549,13 @@
                             ],
                             "複線以上"
                         ],
-                        4,
-                        3
+                        8,
+                        7
                     ]
                 ]
             },
             "layout": {
-                "line-cap": "round",
-                "visibility": "none"
+                "line-cap": "butt"
             }
         },
         {
