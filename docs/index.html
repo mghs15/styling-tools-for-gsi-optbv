@@ -149,7 +149,11 @@ map.showTileBoundaries = false;
 
 
 
-const makePopupHtml = (prop) => {
+const makePopupHtml = (feature) => {
+  
+  
+  const prop = feature.properties;
+  const layer = feature.layer;
   
   let htmlString = ""; //ポップアップ
   let featureProperties = "";
@@ -157,7 +161,8 @@ const makePopupHtml = (prop) => {
     featureProperties = featureProperties + "<tr><td style='vertical-align:top; color:#555555;'>" + name + "</td>"
                       + "<td style='color:#000000;'>" + prop[name] + "</td></tr>";
   }
-  htmlString = htmlString + "<table class='popup-table'>" + featureProperties + "</table>";
+  htmlString = htmlString + "<div class='title'>" + layer.id + "</div>"
+                          + "<table class='popup-table'>" + featureProperties + "</table>";
   
   return htmlString;
   
@@ -185,8 +190,8 @@ map.on('click', function(e) {
   //ポップアップ表示処理
   let htmlString = "";
   features.forEach( feature => {
-    htmlString = htmlString + makePopupHtml(feature.properties);
     console.log(feature);
+    htmlString = htmlString + makePopupHtml(feature);
   });
   
   if (!htmlString || htmlString == "") {

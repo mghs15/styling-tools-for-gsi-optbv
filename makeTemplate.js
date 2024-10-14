@@ -389,6 +389,7 @@ const railLayerConvert = (layer) => {
     //layer.layout.visibility = "none";
     //旗竿は、filter でJR線のみが対象となる
     //layer.minzoom = 11;
+    layer.layout["line-cap"] = "butt";
   }
   
   if(layer.id.match(/鉄道.*ククリ黒/)){
