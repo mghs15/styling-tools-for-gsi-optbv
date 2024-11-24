@@ -20,6 +20,7 @@
 / [railway](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=railway)
 / [muni](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni)
 / [chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)
+/ [darkgray](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=gray)
 / [darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=darkrail)
 
 ## 3D 風
