@@ -20,7 +20,7 @@
 / [railway](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=railway)
 / [muni](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=muni)
 / [chisui](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=chisui)
-/ [darkgray](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=gray)
+/ [gray](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=gray)
 / [darkrail](https://mghs15.github.io/styling-tools-for-gsi-optbv/index.html?style=darkrail)
 
 ## 3D 風
@@ -71,7 +71,7 @@
     ```
     node convert2.js ./src/color-basic.csv ./src/layerinfo-2d.csv ./docs/basic.json
     ```
-  * 配色ファイル
+  * 配色ファイル（`color-*.csv`）
     * CSV ファイル
     * フィールドは以下の通り
       * colorset-name: カラーセット名（いまのところ不使用）
@@ -80,7 +80,7 @@
       * R: 赤
       * G: 緑
       * B: 青
-  * レイヤの非表示・順序設定ファイル
+  * レイヤの非表示・順序設定ファイル（`layerinfo-*.csv`）
     * CSV ファイル
     * フィールドは以下の通り
       * number: レイヤのデフォルト順。大きい方が優先度が高い
@@ -92,6 +92,7 @@
 スタイル一式を `docs` フォルダへ出力する。
   * 内部では、`convert2.js` を呼び、`template.json` を指定されたスタイル一式へ変換する。
   * `convert2.js` 用の引数は、配列として、変数 `list` にハードコード。
+   * 配色ファイルは `color-*.csv`、レイヤの非表示・順序設定ファイルは `layerinfo-*.csv` の `*` 部分のみを引数にとる。
 
 ## 色キーの一覧
 
