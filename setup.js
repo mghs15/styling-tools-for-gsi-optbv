@@ -1,5 +1,6 @@
 const child_process = require('child_process');
 
+// color, layerinfo, style-name
 const list = [
   ["basic", "2d", "basic"], 
   ["dark", "2d", "dark"], 
@@ -11,6 +12,7 @@ const list = [
   ["railway", "railmuni2d", "railway"], 
   ["muni", "railmuni2d", "muni"], 
   ["chisui", "railmuni2d", "chisui"], 
+  ["gray", "railmuni2d", "gray"], 
   ["basic", "3d", "fx-basic"], 
   ["dark", "3d", "fx-dark"], 
   ["dark2", "3d", "fx-dark2"], 
