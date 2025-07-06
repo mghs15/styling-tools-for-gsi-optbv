@@ -39,12 +39,12 @@
       "source": "v",
       "source-layer": "AdmBdry",
       "filter": [
-          "==",
+          "in",
           [
               "get",
               "vt_code"
           ],
-          1212
+          ["literal", [1211, 1212]]
       ],
       "layout": {
           "line-join": "round",
@@ -52,7 +52,11 @@
       },
       "paint": {
           "line-color": "-border-muni-main-#0.1",
-          "line-width": 6
+          "line-width": [
+              "match",
+              [ "get", "vt_code" ],
+              1211, 8, 6
+          ]
       },
       "metadata": {
         "additional": true
